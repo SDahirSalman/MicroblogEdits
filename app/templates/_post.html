@@ -1,0 +1,27 @@
+<table class="table table-hover">
+        <tr>
+            <td width="70px">
+              {% set user_link %}
+                  <a href="{{ url_for('user', username=post.author.username) }}">
+                      {{ post.author.username }}
+                  </a>
+              {% endset %}
+              {{ _('%(username)s said %(when)s',
+                  username=user_link, when=moment(post.timestamp).fromNow()) }}
+              <br>
+              <span id ="post{{ post.id }}"> {{ post.body }}</span>
+              {% if post.author == current_user %}
+                <p><a href="{{ url_for('delete_post', post_id=post.id) }}">Delete Post</a></p>
+                {% endif %}
+                {% if post.language and post.language != g.locale %}
+               <br><br>
+               <span id="translation{{ post.id }}">
+                    <a href="javascript:translate(
+                                '#post{{ post.id }}',
+                                '#translation{{ post.id }}',
+                                '{{ post.language }}',
+                                '{{ g.locale }}');">{{ _('Translate') }}</a>
+                </span>
+               {% endif %}
+              <p>
+            </td>

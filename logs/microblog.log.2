@@ -1,0 +1,126 @@
+2021-06-29 03:53:21,512 ERROR: Exception on /apple-touch-icon.png [GET] [in /Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1926, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1908, in raise_routing_exception
+    raise request.routing_exception
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/ctx.py", line 350, in match_request
+    result = self.url_adapter.match(return_rule=True)
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/werkzeug/routing.py", line 1945, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1816, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1744, in handle_http_exception
+    return handler(e)
+  File "/Users/user/Desktop/microblog/app/errors.py", line 6, in not_found_error
+    return render_template('404.html'), 404
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/user/Desktop/microblog/app/templates/404.html", line 1, in template
+    {% extend base.html %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'extend'.
+2021-06-29 03:55:25,555 ERROR: Exception on /index [POST] [in /Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/user/Desktop/microblog/app/routes.py", line 19, in index
+    language = guess_language(form.post.data)
+NameError: name 'guess_language' is not defined
+2021-06-29 03:56:10,206 INFO: Microblog startup [in /Users/user/Desktop/microblog/app/__init__.py:53]
+2021-06-29 03:57:48,414 INFO: Microblog startup [in /Users/user/Desktop/microblog/app/__init__.py:53]
+2021-06-29 04:06:02,760 INFO: Microblog startup [in /Users/user/Desktop/microblog/app/__init__.py:53]
+2021-06-29 04:43:23,628 INFO: Microblog startup [in /Users/user/Desktop/microblog/app/__init__.py:53]
+2021-06-29 04:43:28,089 ERROR: Exception on /index [GET] [in /Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/user/Desktop/microblog/app/routes.py", line 38, in index
+    prev_url=prev_url)
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/user/Desktop/microblog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/user/Desktop/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/Users/user/Desktop/microblog/app/templates/index.html", line 10, in block "content"
+    {% include '_post.html' %}
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/user/Desktop/microblog/venv/lib/python3.5/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/user/Desktop/microblog/app/templates/_post.html", line 12, in template
+    <span id ="post{{ post.id }}"> {{ post.body </span>
+jinja2.exceptions.TemplateSyntaxError: unexpected '/'
+2021-06-29 21:58:44,538 INFO: Microblog startup [in /Users/user/Desktop/microblog/app/__init__.py:53]
+2021-06-30 01:02:01,869 INFO: Microblog startup [in /Users/user/Desktop/microblog/app/__init__.py:53]
+2021-06-30 01:05:20,759 INFO: Microblog startup [in /Users/user/Desktop/microblog/app/__init__.py:53]
+2021-06-30 01:05:32,999 INFO: Microblog startup [in /Users/user/Desktop/microblog/app/__init__.py:53]
+2021-06-30 14:37:33,937 INFO: Microblog startup [in /Users/user/Desktop/microblog/app/__init__.py:53]
+2021-06-30 14:42:56,514 INFO: Microblog startup [in /Users/user/Desktop/microblog/app/__init__.py:53]
+2021-06-30 14:43:00,422 INFO: Microblog startup [in /Users/user/Desktop/microblog/app/__init__.py:53]
+2021-03-06 17:57:06,507 INFO: Microblog startup [in /Users/user/Desktop/microblog/app/__init__.py:53]
